@@ -12,7 +12,7 @@ Here is an example on how to use this GitHub Action:
 
 ```
     - name: Release
-      uses: sondreb/action-release@master
+      uses: UVASOMIT/action-release-with-assets@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commitish: dev
