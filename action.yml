@@ -1,33 +1,31 @@
-name: sondreb/action-release
+name: UVASOMIT/action-release-with-assets
 description: |
-  GitHub Release Action
-author: Sondre Bjellås
+  GitHub Release Action with Assets
+author: UVASOMIT
 branding:
   icon: box
   color: gray-dark
 inputs:
+  commitish:
+    description: Commit branch
+    required: true
+    default: master
   token:
-    description: 'The GitHub token.'
+    description: The GitHub token.
     required: true
     default: ''
   tag:
-    description: 'An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).'
+    description: An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).
     default: ''
   name:
     required: true
-  draft:
-    description: "Optionally marks this release as a draft release. Set to true to enable."
-    default: false
   prerelease:
     default: false
   files:
     required: false
     default: ''
-  folder:
-    required: false
-    default: ''
   body:
     default: ''
 runs:
-  using: node12
+  using: node10
   main: action.js

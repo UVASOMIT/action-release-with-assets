@@ -1,16 +1,15 @@
 {
-    "name": "action-release",
-    "version": "0.0.3",
+    "name": "action-release-with-assets",
+    "version": "0.1.0",
     "private": true,
-    "description": "GitHub Action: GitHub Release Action",
+    "description": "GitHub Actions: GitHub Release Action with Asset Attachment",
     "main": "action.js",
     "scripts": {
-        "version": "node -p \"require('./package.json').version\"",
-        "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+        "version": "node -p \"require('./package.json').version\""
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sondreb/action-release.git"
+        "url": "git+https://github.com/UVASOMIT/action-release-with-assets.git"
     },
     "keywords": [
         "github",
@@ -18,14 +17,15 @@
         "node",
         "setup"
     ],
-    "author": "Sondre Bjellås",
+    "contributors": [
+        "Sondre Bjellås",
+        "Michael Szul <michael@szul.us>"
+    ],
     "license": "MIT",
     "dependencies": {
         "@actions/core": "^1.2.0",
         "@actions/github": "^2.0.0",
-        "changelog-parser": "^2.8.0"
+        "mime": "^2.4.4"
     },
-    "devDependencies": {
-        "conventional-changelog-cli": "^2.0.31"
-    }
+    "devDependencies": {}
 }

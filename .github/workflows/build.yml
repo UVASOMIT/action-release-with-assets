@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feature/*
 
 jobs:
   
@@ -12,15 +11,14 @@ jobs:
 
     strategy:
       matrix:
-        #os: [ windows-latest, ubuntu-latest, macos-latest ]
-        os: [ ubuntu-latest ]
-        node_version: [12.x]
+        os: [ windows-latest, ubuntu-latest ]
+        node_version: [10.x, 12.x]
       fail-fast: false
 
     runs-on: ${{ matrix.os }}
     
     env:
-      PROJECT_NAME: 'action-release'
+      PROJECT_NAME: 'action-release-with-assets'
 
     steps:
 
@@ -36,21 +34,14 @@ jobs:
       run: |
         echo "::set-env name=VERSION::$(npm run version --silent)"
 
-    # - name: Changelog
-    #   id: changelog
-    #   run: |
-    #     npm run changelog
-
     - name: Release
-      uses: sondreb/action-release@master
+      uses: UVASOMIT/action-release-with-assets@master
       with:
         verbose: false
         token: ${{ secrets.GITHUB_TOKEN }}
-        #files: "action.js;README.md"
-        folder: "./test/"
-        draft: true
-        prerelease: true
-        body: 'A little test - some updated text!'
-        #body: ${{outputs.changelog.}}
-        name: "Draft Release (Release ${{env.VERSION}})"
-        tag: v${{env.VERSION}}
+        files: ./release/app.zip
+        draft: false
+        prerelease: false
+        body: An updated zip file
+        name: Release dev-lms-${{ github.run_id }}
+        tag: dev-lms-${{ github.run_id }}
