@@ -43,5 +43,5 @@ jobs:
         draft: false
         prerelease: false
         body: An updated zip file
-        name: Release dev-lms-${{ github.run_id }}
-        tag: dev-lms-${{ github.run_id }}
+        name: Release ${{ github.run_id }}-${{ github.run_number }}
+        tag: ${{ github.run_id }}-${{ github.run_number }}
