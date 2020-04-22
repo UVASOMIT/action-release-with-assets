@@ -27,5 +27,5 @@ inputs:
   body:
     default: ''
 runs:
-  using: node10
+  using: node12
   main: action.js
