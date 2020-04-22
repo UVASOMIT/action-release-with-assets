@@ -65,7 +65,7 @@ const github = require('@actions/github');
                     ['content-length']: fileInfo.size
                 },
                 name: fileInfo.name,
-                file: fileInfo.file
+                data: fileInfo.file
             });
 
             console.log(`Result from upload' ${ result }`);
