@@ -8,7 +8,7 @@ Forked from [Sondre Bjellås](https://github.com/sondreb/action-release) who was
 
 ## Usage
 
-Here is an example on how to use this Action:
+Here is an example on how to use this GitHub Action:
 
 ```
     - name: Release
