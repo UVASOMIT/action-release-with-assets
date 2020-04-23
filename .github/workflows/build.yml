@@ -34,7 +34,7 @@ jobs:
       run: |
         echo "::set-env name=VERSION::$(npm run version --silent)"
 
-    - name: Release
+    - name: Release with Assets
       uses: UVASOMIT/action-release-with-assets@master
       with:
         verbose: false
