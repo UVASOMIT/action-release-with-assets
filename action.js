@@ -88,7 +88,7 @@ const github = require('@actions/github');
         const prerelease = core.getInput('prerelease') == 'true';
         const files = [];
 
-        if(files.indexOf(';') !== -1) {
+        if(core.getInput('files').indexOf(';') !== -1) {
             const fss = core.getInput('files').split(';');
             files.push(...fss)
         }
